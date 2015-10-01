@@ -22,6 +22,7 @@ public class Post implements Comparable<Post> {
 
     User user;
 
+    String title;
     String content;
 
     Date date;
@@ -29,11 +30,13 @@ public class Post implements Comparable<Post> {
 
     private Post() {}
 
-    public Post(User user, String content) {
+    public Post(User user, String title, String content) {
 
         this.user = user;
 
         this.content = content;
+        
+        this.title = title;
 
         date = new Date();
 
@@ -48,6 +51,12 @@ public class Post implements Comparable<Post> {
     public String getContent() {
 
         return content;
+
+    }
+    
+    public String getTitle() {
+
+        return title;
 
     }
 

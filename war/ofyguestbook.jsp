@@ -22,16 +22,33 @@
 
    <head>
    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+   
+   	<script type="text/javascript">
+   		var showAll = false;
+   		
+   		
+   		
+   		function showAllOn(){
+   			showAll = true;
+   		}
+   		
+   		function showAllOff(){
+   			showAll = false;
+   		}
+   		
+   		function getShowAll(){
+   			return showAll;
+   		}
+	</script>
+   
  </head>
 
  
 
   <body>
-
  
 
 <%
-
        
 	ObjectifyService.register(Post.class);
 	
@@ -52,12 +69,19 @@
     UserService userService = UserServiceFactory.getUserService();
 
     User user = userService.getCurrentUser();
+%>
+			<div id="header">
+				<img src="nishanths.jpg" height="80px">
+				<h1>BlogName</h1>
+			
+<%
 
     if (user != null) {
 
       pageContext.setAttribute("user", user);
 
-%>
+%>			
+
 
 <p>Hello, ${fn:escapeXml(user.nickname)}! (You can
 
@@ -81,7 +105,11 @@ to post.</p>
 
 %>
 
- 
+
+
+</div>
+
+<div id="main">
 
 <%
 
@@ -102,7 +130,7 @@ to post.</p>
 
         <%
 
-        for (Post post : posts) {
+        for (Post post : posts.subList(0, 3)) {
 
             pageContext.setAttribute("greeting_content",
 
@@ -142,20 +170,23 @@ to post.</p>
 
 %>
 
- 
+	<button onclick="showAllOn()">Show All</button>
+    
+<!--
+	<form action="/ofysign" method="post">
 
-    <form action="/ofysign" method="post">
-
+      <div><textarea name="title" rows="1" cols="60"></textarea></div>
       <div><textarea name="content" rows="3" cols="60"></textarea></div>
 
-      <div><input type="submit" value="Post Greeting" /></div>
+      <div><input type="submit" value="Post Blogpost" /></div>
 
       <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
 
     </form>
+-->
 
  
-
+	</div>
   </body>
 
 </html>
