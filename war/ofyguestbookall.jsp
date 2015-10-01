@@ -138,7 +138,7 @@ to post.</p>
 
         <%
 
-        for (Post post : posts.subList(0, 3)) {
+        for (Post post : posts) {
 
             pageContext.setAttribute("greeting_content",
 
@@ -178,8 +178,9 @@ to post.</p>
 
 %>
 
-	<form action="/ofysignall" method="post">
-      <div><input type="submit" value="Show All" /></div>
+	<form action="/emptyofysign" method="post">
+	
+      <div><input type="submit" value="Show Less" /></div>
 
       <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
 

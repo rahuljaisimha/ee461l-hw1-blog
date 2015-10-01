@@ -47,6 +47,54 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
     </servlet-mapping>
     
+    <servlet>
+
+        <servlet-name>emptyofysign</servlet-name>
+
+        <servlet-class>guestbook.EmptyOfySignGuestbookServlet</servlet-class>
+
+    </servlet>
+
+    <servlet-mapping>
+
+        <servlet-name>emptyofysign</servlet-name>
+
+        <url-pattern>/emptyofysign</url-pattern>
+
+    </servlet-mapping>
+    
+    <servlet>
+
+        <servlet-name>ofysignall</servlet-name>
+
+        <servlet-class>guestbook.OfySignGuestbookServletAll</servlet-class>
+
+    </servlet>
+
+    <servlet-mapping>
+
+        <servlet-name>ofysignall</servlet-name>
+
+        <url-pattern>/ofysignall</url-pattern>
+
+    </servlet-mapping>
+    
+    <servlet>
+
+        <servlet-name>createpost</servlet-name>
+
+        <servlet-class>guestbook.CreatePostServlet</servlet-class>
+
+    </servlet>
+
+    <servlet-mapping>
+
+        <servlet-name>createpost</servlet-name>
+
+        <url-pattern>/createpost</url-pattern>
+
+    </servlet-mapping>
+    
     <filter>
 
         <filter-name>ObjectifyFilter</filter-name>
